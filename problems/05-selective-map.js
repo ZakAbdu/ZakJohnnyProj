@@ -51,13 +51,9 @@ let selectiveMap = function (arr, cb1, cb2) {
         else {
             newArr.push(arr[i]);
         }
-
     }
-
     return newArr
-
 };
-
 // --------------------
 
 
