@@ -29,11 +29,36 @@ console.log(chainMap(4, square, half));         // 8
 console.log(chainMap(4, half, square));         // 4
 *******************************************************************************/
 
-let chainMap = function() {
+let chainMap = function (num, ...cb) {
+    // [add5, half, square]
+    let result = cb[0](num);
+    for (let i = 1; i < cb.length; i++) {
+        result = cb[i](result);
+    }
 
+    return result;
 };
 
+// -------------------------
 
+
+let add5 = function (n) {
+    return n + 5;
+};
+
+let half = function (n) {
+    return n / 2;
+};
+
+let square = function (n) {
+    return n * n;
+};
+
+console.log(chainMap(25, add5));                // 30
+console.log(chainMap(25, add5, half));          // 15
+console.log(chainMap(25, add5, half, square));  // 225
+console.log(chainMap(4, square, half));         // 8
+console.log(chainMap(4, half, square));         // 4
 
 
 
