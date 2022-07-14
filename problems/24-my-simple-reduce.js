@@ -34,17 +34,14 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
   optional initial accumulator
 *******************************************************************************/
 
-let mySimpleReduce = function () {
-    let mySimpleReduce = function (array, cb) {
-        let accum = cb(array[0], array[1]);
-        for (let i = 2; i < array.length; i++) {
-            console.log('accum: ' + accum + ' | ele ' + array[i]);
-            accum = cb(accum, array[i]);
-        }
+let mySimpleReduce = function (array, cb) {
+    let accum = cb(array[0], array[1]);
+    for (let i = 2; i < array.length; i++) {
+        console.log('accum: ' + accum + ' | ele ' + array[i]);
+        accum = cb(accum, array[i]);
+    }
 
-        return accum;
-    };
-
+    return accum;
 };
 
 
